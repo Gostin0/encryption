@@ -1,0 +1,21 @@
+<html>
+<script type="text/javascript" src="channel.js"></script>
+<script type="text/javascript" src="binary-file-reader.js"></script>
+<script type="text/javascript" src="note-tooltips.js"></script>
+<script type="text/javascript" src="xm.js"></script>
+<script type="text/javascript" src="xm-player.js"></script>
+<body onload="onBodyLoad()">
+
+<input type="file" id="xm-file" onchange="onInputFileChange(event)">
+<input type="url" id="xm-url" value="/tor.xm" >
+
+<button id = "play" onclick="xm.playSong()">▶</button>
+<button onclick="xm.playSong(0,undefined,true)">↺</button>
+
+<div id="patterns"></div>
+<div id="instruments"></div>
+<div id="row-highlight" style="position: fixed; font-size: small; left: 0; top: 50%; margin-top: -1.5ex; width: 100%; display: none;">▶</div>
+<button id="stop-button" onclick="stopPlaying()" style="position: fixed; top: 0; right: 0;">■</button>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ua-UA">
+ <head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <script type="text/javascript" src="/function.js"></script>
+  <script type="text/javascript" src="/lab.js"></script>
+  
+  <script type="text/javascript" src="xm-player.js"></script>   <!--підключення музону -->
+  <script> let tor = "tor4.xm"</script>   
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кодування</title>
+  </head>
+ <body onload="loadz();">                                       <!--Функція запускі плеєра + функція сервака -->
+  <div class="container">
+   <div class="row" style="text-align:center;">
+    <h1 style="margin:50px;">Кодування</h1>
+    <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+     <h5 class="alert-info" id="ssdp_t">{{SSDP}}</h5>
+     <a class="btn btn-block btn-danger" href="/index.htm">Налаштування</a>
+     <a class="btn btn-block btn-default" href="/device.htm">Лаби</a>
+     <h2>Введіть слово</h2>
+     <input id="slov" class="form-control" pattern="[a-z]{1,26}" value="hello" placeholder="Писати сюди">
+     <input class="btn btn-block btn-success" value="Закодувати" onclick="zakoduvaty4(this);" type="submit">
+     <h2>Закодоване слово</h2>
+     <input class="form-control" id="zakodslov" readonly>
+     <h2>Введіть код</h2>
+     <input id="zakodslovo" class="form-control" pattern="[a-z]{1,30}" placeholder="Писати сюди">
+     <input class="btn btn-block btn-success" value="Розкодувати" onclick="rozkoduvaty4(this);" type="submit">
+     <h2>Розкодоване слово</h2>
+     <input class="form-control" id="rez" readonly>
+    </div>
+   </div>
+  </div>
+  <button id="stop-button" onclick="stopPlaying()" style="position: fixed; top: 0; right: 0;">■</button>   <!-- Кнопка стоп-->
+ </body>
+</html>
