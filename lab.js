@@ -48,7 +48,6 @@ function zakod() {
 //----------------------------ЛАБА№2------------------------------
 function zakoduvaty2() {
   let ded;
-  console.log("я тут");
   zakodslov.value = "";
   let inputsm = document.getElementById('slov').value;
   for (i = 0; i < inputsm.length; i++) {
@@ -106,9 +105,9 @@ function zakoduvaty() {
     }
   }
   
-  //----------------------------ЛАБА№4------------------------------
+//----------------------------ЛАБА№4------------------------------
   
-  //-------Матриця з ключом ---------------------------------------
+//-------Матриця з ключом ----------------------------------------
   
   let maskey = [['g',  'o',  'd', 'a', 'y'],
                 ['b',  'c',  'e', 'f', 'h'],
@@ -119,7 +118,7 @@ function zakoduvaty() {
   function zakoduvaty4() {
   let inputsm = document.getElementById('slov').value;
 
-  //-------Зміні для роботи ---------------------------------------
+//-------Зміні для роботи ---------------------------------------
   
   let ded;
   let inputsmh = ['0'];
@@ -290,27 +289,94 @@ function rozkoduvaty4() {
   rez.value += maszn;
 }
 
+//----------------------------ЛАБА№5------------------------------
+//----------------------Функція шифрування------------------------
 
+function zakoduvaty5(){
+  zakodslov.value = "";
+  let key =  document.getElementById('key').value;
+  let inputsm =  document.getElementById('slov').value;
+  let maszn = ['0'];
+  let k = 0;
+  let ded;
 
+  for(i = 0; i < inputsm.length; i++){
+    if (k == key.length) {k = 0;}
+    maszn[i] = ((key[k].charCodeAt(0))-97);
+    k = k + 1;
+    maszn[i] = (((inputsm[i].charCodeAt(0))-97) + maszn[i]);
+    if (maszn[i] > 26) {
+      maszn[i] = maszn[i] - 26;
+      }
+    ded = (zakodslov.value += (maszn[i] + ' '));    
+  }
+  (document.getElementById('zakodslovo')).value = ded.replace(/(\s*)$/g, '');
+}
 
+//-------Функція розшифрування-----------------------------------
 
+function rozkoduvaty5() {
+  rez.value = "";
+  let masznach = (document.getElementById('zakodslovo').value).split(' ')
+  let key =  document.getElementById('key').value;
+  let k = 0;
 
+  for(i = 0; i < masznach.length; i++){
+    if (k == key.length) {k = 0;}
+    masznach[i] = (masznach[i] - ((key[k].charCodeAt(0))-97));
+    k = k + 1;
+    if (masznach[i] < 0) {masznach[i] = masznach[i] + 26;}
+    rez.value +=(String.fromCharCode(masznach[i] + 97));
+  }
+}
 
+//----------------------------ЛАБА№6------------------------------
+//----------------------Функція шифрування------------------------
+function zakoduvaty6(){
+  zakodslov.value = "";
+  key.value = "";
+  let max = 15;
+  let randchek = 0;
+  let mas = [""];
+  let zn = 0;
+  let inputsm =  document.getElementById('slov').value;
+  
+  rand();
+  
+  for (i = 0; i < mas.length; i++){
+    key.value += (mas[i])
+    zakodslovo.value = zakodslov.value += (inputsm[mas[i]])
+    
+  }
+  
+  
+    function rand(){
+    max = inputsm.length - 1;
+    ramreng =(Math.floor(Math.random() * (max - 0 + 1)) + 0);
+    if (mas.length <= max){
+    test();
+    }
+  }
+  
+  function test(){
+   if (mas.indexOf(ramreng) == (-1) ){
+    mas[zn] = ramreng;
+    zn = zn + 1;
+   } 
+    rand();
+  }
+}
+//-------Функція розшифрування-----------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function rozkoduvaty6() {
+  rez.value = "";
+  let masznach = (document.getElementById('zakodslovo').value);
+  let key =  document.getElementById('key').value;
+  console.log(key);
+  for (i = 0; i < masznach.length; i++){
+    rez.value += (masznach[key[i]]);
+  }
+}
 
 
 
