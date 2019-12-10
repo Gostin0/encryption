@@ -345,7 +345,7 @@ function zakoduvaty6(){
   
   for (i = 0; i < mas.length; i++){
     key.value += (mas[i])
-    zakodslovo.value = zakodslov.value += (inputsm[mas[i]])
+    zakodslovo.value = zakodslov.value += (inputsm[mas[i]]);
     
   }
   
@@ -372,14 +372,39 @@ function rozkoduvaty6() {
   rez.value = "";
   let masznach = (document.getElementById('zakodslovo').value);
   let key =  document.getElementById('key').value;
-  console.log(key);
   for (i = 0; i < masznach.length; i++){
     rez.value += (masznach[key[i]]);
   }
 }
 
+//----------------------------ЛАБА№7------------------------------
+//----------------------Функція шифрування------------------------
+function zakoduvaty7(){
+  zakodslov.value = "";
+  zn = 0;
+  let inputsm =  document.getElementById('slov').value;
+  let key =  document.getElementById('key').value;
+  for (i = 0; i < inputsm.length; i++){
+    if (zn == key.length) {zn = 0;}
+    zakodslovo.value = zakodslov.value += ((inputsm[i].charCodeAt(0)) ^ (key[zn].charCodeAt(0)));
+    if (i+1 < inputsm.length) {zakodslovo.value = zakodslov.value += ' '}
+    zn = zn + 1;
+  }
+  
+}
+//-------Функція розшифрування-----------------------------------
 
-
+function rozkoduvaty7() {
+  rez.value = "";
+  zn = 0;
+  let masznach = (document.getElementById('zakodslovo').value).split(' ');
+  let key =  document.getElementById('key').value;
+  for (i = 0; i < masznach.length; i++){
+    if (zn == key.length) {zn = 0;}
+    rez.value += String.fromCharCode(parseInt(masznach[i], 10) ^ (key[zn].charCodeAt(0)));
+    zn = zn + 1;
+  }
+}
 
 
 
