@@ -370,10 +370,12 @@ function zakoduvaty6(){
 
 function rozkoduvaty6() {
   rez.value = "";
+  let mas = "";
   let masznach = (document.getElementById('zakodslovo').value);
   let key =  document.getElementById('key').value;
   for (i = 0; i < masznach.length; i++){
-    rez.value += (masznach[key[i]]);
+    mas[key[i]] = masznach[i];
+    rez.value += (mas[i]);
   }
 }
 
