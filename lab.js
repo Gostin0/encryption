@@ -370,16 +370,16 @@ function zakoduvaty6(){
 
 function rozkoduvaty6() {
   rez.value = "";
-  let mas = [""];
+  let mass = [""];
   let masznach = (document.getElementById('zakodslovo').value);
   let key =  document.getElementById('key').value;
   for (i = 0; i < masznach.length; i++){
-    mas[parsInt(key[i], 10)] = masznach[i];
+    mass[parsInt(key[i], 10)] = masznach[i];
   }
-  for (i = 0; i < mas.length; i++){
-  rez.value += (mas[i]);
+  for (i = 0; i < mass.length; i++){
+  rez.value += (mass[i]);
   }
-
+}
 //----------------------------ЛАБА№7------------------------------
 //----------------------Функція шифрування------------------------
 function zakoduvaty7(){
