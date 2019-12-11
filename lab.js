@@ -374,7 +374,7 @@ function rozkoduvaty6() {
   let masznach = (document.getElementById('zakodslovo').value);
   let key =  document.getElementById('key').value;
   for (i = 0; i < masznach.length; i++){
-    mas[key[i]] = masznach[i];
+    mas[parsInt(key[i], 10)] = masznach[i];
     rez.value += (mas[i]);
   }
 }
