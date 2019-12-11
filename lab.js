@@ -1,4 +1,4 @@
-//------------------Числові проміжки для 2 Лаби-------------------
+I8//------------------Числові проміжки для 2 Лаби-------------------
 // масив псевдорамдомного розміщення символів
 
   let alfs = ["j","r","g","m","a","w","f","s","q","c","i","h","x","d","t","y","v","z","p","n","e","o","l","b","k","u"];
@@ -370,14 +370,15 @@ function zakoduvaty6(){
 
 function rozkoduvaty6() {
   rez.value = "";
-  let mas = "";
+  let mas = [""];
   let masznach = (document.getElementById('zakodslovo').value);
   let key =  document.getElementById('key').value;
   for (i = 0; i < masznach.length; i++){
     mas[parsInt(key[i], 10)] = masznach[i];
-    rez.value += (mas[i]);
   }
-}
+  for (i = 0; i < mas.length; i++){
+  rez.value += (mas[i]);
+  }
 
 //----------------------------ЛАБА№7------------------------------
 //----------------------Функція шифрування------------------------
@@ -392,7 +393,6 @@ function zakoduvaty7(){
     if (i+1 < inputsm.length) {zakodslovo.value = zakodslov.value += ' '}
     zn = zn + 1;
   }
-  
 }
 //-------Функція розшифрування-----------------------------------
 
