@@ -370,14 +370,14 @@ function zakoduvaty6(){
 
 function rozkoduvaty6() {
   rez.value = "";
-  let mass = [""];
+  let mas = [""];
   let masznach = (document.getElementById('zakodslovo').value);
   let key =  document.getElementById('key').value;
   for (i = 0; i < masznach.length; i++){
-    mass[parsInt(key[i], 10)] = masznach[i];
+    mas[key[i]] = masznach[i];
   }
-  for (i = 0; i < mass.length; i++){
-  rez.value += (mass[i]);
+  for (i = 0; i < masznach.length; i++){
+    rez.value += (mas[i]);
   }
 }
 //----------------------------ЛАБА№7------------------------------
