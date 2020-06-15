@@ -48,7 +48,7 @@ function zakod() {
 //----------------------------ЛАБА№2------------------------------
 function zakoduvaty2() {
   let ded;
-  zakodslov.value = "";
+  //zakodslov.value = "";
   let inputsm = document.getElementById('slov').value;
   for (i = 0; i < inputsm.length; i++) {
   let ascii =  (inputsm[i].charCodeAt(0)) - 97;
